@@ -23,7 +23,7 @@ const Index = () => {
             <Button asChild size="lg" className="text-base shadow-xl">
               <a href="#reservas">Reservar Cita</a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="text-base border-hero-foreground/30 text-hero-foreground hover:bg-hero-foreground/10">
+            <Button asChild size="lg" className="text-base shadow-xl">
               <Link to="/servicios">Ver Servicios</Link>
             </Button>
           </div>
