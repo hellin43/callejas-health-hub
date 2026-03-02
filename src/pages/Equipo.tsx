@@ -23,7 +23,7 @@ const Equipo = () => {
 
   return (
     <div ref={scrollRef}>
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <h1 className="fade-in-up font-display text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
             Conoce a nuestros profesionales
@@ -33,18 +33,18 @@ const Equipo = () => {
             {equipo.map((p, i) => (
               <Card
                 key={i}
-                className="fade-in-up text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="fade-in-up text-center rounded-2xl shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               >
                 <CardHeader className="items-center">
                   <img
                     src={p.img}
                     alt={`Foto de ${p.name}`}
                     loading="lazy"
-                    className="w-32 h-32 rounded-full object-cover mb-4"
+                    className="w-32 h-32 rounded-full object-cover mb-4 ring-4 ring-primary/20"
                   />
                   <CardTitle className="text-xl">{p.name}</CardTitle>
                   <CardDescription className="font-medium text-primary">{p.role}</CardDescription>
-                  <span className="text-xs text-muted-foreground">{p.colegiado}</span>
+                  <span className="text-xs font-semibold text-secondary">{p.colegiado}</span>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">{p.desc}</p>

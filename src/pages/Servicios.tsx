@@ -29,7 +29,7 @@ const Servicios = () => {
 
   return (
     <div ref={scrollRef}>
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-section-alt">
         <div className="container mx-auto px-4">
           <h1 className="fade-in-up font-display text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
             Nuestras Especialidades
@@ -39,7 +39,7 @@ const Servicios = () => {
             {servicios.map((s, i) => (
               <Card
                 key={i}
-                className="fade-in-up overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="fade-in-up overflow-hidden rounded-2xl shadow-xl bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               >
                 <img
                   src={s.img}
