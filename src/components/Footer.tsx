@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="bg-footer-bg text-footer-foreground">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-background/20 mt-8 pt-6 text-center text-xs opacity-60">
+        <div className="border-t border-footer-foreground/20 mt-8 pt-6 text-center text-xs opacity-60">
           <p>© 2026 Clínica Javier Callejas. Todos los derechos reservados.</p>
           <p className="mt-1">
             Web realizada por{" "}
