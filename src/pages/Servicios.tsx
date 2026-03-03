@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
@@ -29,6 +30,10 @@ const Servicios = () => {
 
   return (
     <div ref={scrollRef}>
+      <Helmet>
+        <title>Tratamientos y Servicios de Fisioterapia en Hellín</title>
+        <meta name="description" content="Terapia manual, fisioterapia deportiva, rehabilitación post-operatoria y punción seca en Hellín. Descubre nuestros tratamientos especializados." />
+      </Helmet>
       <section className="py-16 md:py-24 bg-section-alt">
         <div className="container mx-auto px-4">
           <h1 className="fade-in-up font-display text-3xl md:text-4xl font-bold text-center text-foreground mb-12">

@@ -1,14 +1,40 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { User, Cpu, Clock, CalendarCheck } from "lucide-react";
+import { User, Cpu, Clock, CalendarCheck, Star } from "lucide-react";
 
 const Index = () => {
   const scrollRef = useScrollAnimation();
 
   return (
     <div ref={scrollRef}>
+      <Helmet>
+        <title>Fisioterapia en Hellín | Clínica Javier Callejas</title>
+        <meta name="description" content="Recupera tu movilidad en Hellín. Fisioterapia avanzada, osteopatía y rehabilitación. Reserva tu cita online." />
+        <link rel="canonical" href="https://clinicajaviercallejas.es/" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MedicalClinic",
+          "name": "Clínica de Fisioterapia Javier Callejas",
+          "telephone": "+34609352827",
+          "url": "https://clinicajaviercallejas.es",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hellín",
+            "addressRegion": "Albacete",
+            "addressCountry": "ES"
+          },
+          "medicalSpecialty": "Physiotherapy",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "1000"
+          }
+        })}</script>
+      </Helmet>
       {/* Hero */}
       <section className="relative overflow-hidden bg-slate-900 py-24 md:py-36">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900/40 opacity-90" />
@@ -26,6 +52,14 @@ const Index = () => {
             <Button asChild size="lg" className="text-base shadow-xl bg-blue-600 hover:bg-blue-700 text-white">
               <Link to="/servicios">Ver Servicios</Link>
             </Button>
+          </div>
+          <div className="fade-in-up mt-6 flex items-center justify-center gap-1 text-white/80">
+            <div className="flex gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+              ))}
+            </div>
+            <span className="ml-2 text-sm">Más de 1.000 pacientes recuperados en Hellín</span>
           </div>
         </div>
       </section>
@@ -85,16 +119,23 @@ const Index = () => {
               {
                 title: "Primera Consulta Fisioterapia",
                 url: "https://cal.com/hellin360/primera-consulta-fisioterapia",
+                highlighted: true,
               },
               {
                 title: "Consulta Sucesiva",
                 url: "https://cal.com/hellin360/consulta-fisioterapia",
+                highlighted: false,
               },
             ].map((item, i) => (
               <Card
                 key={i}
-                className="rounded-2xl shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                className={`relative rounded-2xl shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${item.highlighted ? "border-2 border-blue-600" : ""}`}
               >
+                {item.highlighted && (
+                  <Badge className="absolute -top-3 right-4 bg-blue-600 text-white hover:bg-blue-700">
+                    Nuevos Pacientes
+                  </Badge>
+                )}
                 <CardHeader className="items-center">
                   <CalendarCheck className="h-10 w-10 text-blue-600 mb-2" />
                   <CardTitle className="text-lg">{item.title}</CardTitle>
