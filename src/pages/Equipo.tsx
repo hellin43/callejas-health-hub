@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
@@ -23,6 +24,10 @@ const Equipo = () => {
 
   return (
     <div ref={scrollRef}>
+      <Helmet>
+        <title>Conoce a nuestro equipo de Fisioterapeutas | Clínica Javier Callejas</title>
+        <meta name="description" content="Conoce a los fisioterapeutas de la Clínica Javier Callejas en Hellín. Profesionales especializados en terapia manual y rehabilitación." />
+      </Helmet>
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <h1 className="fade-in-up font-display text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
