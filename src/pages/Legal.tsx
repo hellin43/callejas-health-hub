@@ -1,5 +1,5 @@
-import { Helmet } from "react-helmet-async";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useSeo } from "@/hooks/use-seo";
 
 const sections = [
   {
@@ -24,13 +24,13 @@ const sections = [
 
 const Legal = () => {
   const scrollRef = useScrollAnimation();
+  useSeo({
+    title: "Aviso Legal y Política de Privacidad | Clínica Javier Callejas",
+    description: "Aviso legal, política de privacidad y política de cookies de la Clínica de Fisioterapia Javier Callejas en Hellín.",
+  });
 
   return (
     <div ref={scrollRef}>
-      <Helmet>
-        <title>Aviso Legal y Política de Privacidad | Clínica Javier Callejas</title>
-        <meta name="description" content="Aviso legal, política de privacidad y política de cookies de la Clínica de Fisioterapia Javier Callejas en Hellín." />
-      </Helmet>
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-3xl">
           <h1 className="fade-in-up font-display text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
