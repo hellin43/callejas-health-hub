@@ -10,20 +10,20 @@ const Index = () => {
   return (
     <div ref={scrollRef}>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-hero py-24 md:py-36">
-        <div className="absolute inset-0 bg-gradient-to-br from-hero via-hero to-primary/20 opacity-90" />
+      <section className="relative overflow-hidden bg-slate-900 py-24 md:py-36">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900/40 opacity-90" />
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="fade-in-up font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-hero-foreground max-w-4xl mx-auto">
+          <h1 className="fade-in-up font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white max-w-4xl mx-auto">
             Recupera tu movilidad y dile adiós al dolor en Hellín
           </h1>
-          <p className="fade-in-up mt-6 text-lg md:text-xl text-hero-foreground/75 max-w-2xl mx-auto">
+          <p className="fade-in-up mt-6 text-lg md:text-xl text-slate-200 max-w-2xl mx-auto">
             Tratamientos de fisioterapia avanzada y personalizada para que vuelvas a tu rutina sin molestias. Resultados desde la primera sesión.
           </p>
           <div className="fade-in-up mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="text-base shadow-xl">
+            <Button asChild size="lg" className="text-base shadow-xl bg-blue-600 hover:bg-blue-700 text-white">
               <a href="#reservas">Reservar Cita</a>
             </Button>
-            <Button asChild size="lg" className="text-base shadow-xl">
+            <Button asChild size="lg" className="text-base shadow-xl bg-blue-600 hover:bg-blue-700 text-white">
               <Link to="/servicios">Ver Servicios</Link>
             </Button>
           </div>
@@ -31,7 +31,7 @@ const Index = () => {
       </section>
 
       {/* Ventajas */}
-      <section className="py-16 md:py-24 bg-section-alt">
+      <section className="py-16 md:py-24 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -56,7 +56,7 @@ const Index = () => {
                 className="fade-in-up text-center border-none rounded-2xl shadow-xl bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               >
                 <CardHeader className="items-center pb-2">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary mb-2">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 text-blue-600 mb-2">
                     <item.icon className="h-7 w-7" />
                   </div>
                   <CardTitle className="text-lg">{item.title}</CardTitle>
@@ -96,7 +96,7 @@ const Index = () => {
                 className="rounded-2xl shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               >
                 <CardHeader className="items-center">
-                  <CalendarCheck className="h-10 w-10 text-secondary mb-2" />
+                  <CalendarCheck className="h-10 w-10 text-blue-600 mb-2" />
                   <CardTitle className="text-lg">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
