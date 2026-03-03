@@ -1,41 +1,41 @@
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useSeo } from "@/hooks/use-seo";
 import { User, Cpu, Clock, CalendarCheck, Star } from "lucide-react";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Clínica de Fisioterapia Javier Callejas",
+  "telephone": "+34609352827",
+  "url": "https://clinicajaviercallejas.es",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Hellín",
+    "addressRegion": "Albacete",
+    "addressCountry": "ES"
+  },
+  "medicalSpecialty": "Physiotherapy",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1000"
+  }
+};
 
 const Index = () => {
   const scrollRef = useScrollAnimation();
+  useSeo({
+    title: "Fisioterapia en Hellín | Clínica Javier Callejas",
+    description: "Recupera tu movilidad en Hellín. Fisioterapia avanzada, osteopatía y rehabilitación. Reserva tu cita online.",
+    jsonLd,
+  });
 
   return (
     <div ref={scrollRef}>
-      <Helmet>
-        <title>Fisioterapia en Hellín | Clínica Javier Callejas</title>
-        <meta name="description" content="Recupera tu movilidad en Hellín. Fisioterapia avanzada, osteopatía y rehabilitación. Reserva tu cita online." />
-        <link rel="canonical" href="https://clinicajaviercallejas.es/" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "MedicalClinic",
-          "name": "Clínica de Fisioterapia Javier Callejas",
-          "telephone": "+34609352827",
-          "url": "https://clinicajaviercallejas.es",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Hellín",
-            "addressRegion": "Albacete",
-            "addressCountry": "ES"
-          },
-          "medicalSpecialty": "Physiotherapy",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "1000"
-          }
-        })}</script>
-      </Helmet>
-      {/* Hero */}
       <section className="relative overflow-hidden bg-slate-900 py-24 md:py-36">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900/40 opacity-90" />
         <div className="container mx-auto px-4 text-center relative z-10">
