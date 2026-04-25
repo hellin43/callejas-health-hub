@@ -44,14 +44,19 @@ const Servicios = () => {
             {servicios.map((s, i) => (
               <Card
                 key={i}
-                className="fade-in-up overflow-hidden rounded-2xl shadow-xl bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                className="fade-in-up overflow-hidden rounded-2xl bg-card card-elevated border-t-2 border-t-primary/20"
               >
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  loading="lazy"
-                  className="w-full h-48 object-cover"
-                />
+                <div className="relative">
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    loading="lazy"
+                    className="w-full h-48 object-cover"
+                  />
+                  <span className="absolute top-3 left-3 inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-white/90 backdrop-blur-sm text-primary">
+                    Especialidad
+                  </span>
+                </div>
                 <CardHeader>
                   <CardTitle className="text-xl">{s.title}</CardTitle>
                 </CardHeader>

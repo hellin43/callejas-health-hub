@@ -38,14 +38,14 @@ const Equipo = () => {
             {equipo.map((p, i) => (
               <Card
                 key={i}
-                className="fade-in-up text-center rounded-2xl shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                className="fade-in-up text-center rounded-2xl bg-card card-elevated border-t-4 border-t-primary/30"
               >
                 <CardHeader className="items-center">
                   <img
                     src={p.img}
                     alt={`Foto de ${p.name}`}
                     loading="lazy"
-                    className="w-32 h-32 rounded-full object-cover mb-4 ring-4 ring-primary/20"
+                    className="w-32 h-32 rounded-full object-cover mb-4 ring-4 ring-primary/15 shadow-[0_4px_20px_hsl(213_94%_35%_/_0.2)]"
                   />
                   <CardTitle className="text-xl">{p.name}</CardTitle>
                   <CardDescription className="font-medium text-primary">{p.role}</CardDescription>
