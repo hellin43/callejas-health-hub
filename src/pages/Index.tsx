@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useSeo } from "@/hooks/use-seo";
-import { User, Cpu, Clock, CalendarCheck, Star } from "lucide-react";
+import { User, Cpu, Clock, CalendarCheck, Star, Shield } from "lucide-react";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -36,30 +36,93 @@ const Index = () => {
 
   return (
     <div ref={scrollRef}>
-      <section className="relative overflow-hidden bg-slate-900 py-24 md:py-36">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900/40 opacity-90" />
+      <section className="relative overflow-hidden py-24 md:py-36">
+        {/* Gradiente de fondo */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(213_94%_18%)] via-[hsl(213_94%_22%)] to-[hsl(215_60%_15%)]" />
+
+        {/* Glow decorativo superior derecha */}
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[hsl(213_94%_50%/0.25)] blur-3xl pointer-events-none" />
+
+        {/* Glow decorativo inferior izquierda */}
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-[hsl(160_60%_40%/0.18)] blur-3xl pointer-events-none" />
+
+        {/* Patrón de puntos sutil */}
+        <div
+          className="absolute inset-0 opacity-[0.07] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, white 1px, transparent 1px)",
+            backgroundSize: "32px 32px",
+          }}
+        />
+
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="fade-in-up font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white max-w-4xl mx-auto">
-            Recupera tu movilidad y dile adiós al dolor en Hellín
-          </h1>
-          <p className="fade-in-up mt-6 text-lg md:text-xl text-slate-200 max-w-2xl mx-auto">
-            Tratamientos de fisioterapia avanzada y personalizada para que vuelvas a tu rutina sin molestias. Resultados desde la primera sesión.
-          </p>
-          <div className="fade-in-up mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="text-base shadow-xl bg-blue-600 hover:bg-blue-700 text-white">
-              <a href="#reservas">Reservar Cita</a>
-            </Button>
-            <Button asChild size="lg" className="text-base shadow-xl bg-blue-600 hover:bg-blue-700 text-white">
-              <Link to="/servicios">Ver Servicios</Link>
-            </Button>
+          {/* Chip / badge de confianza */}
+          <div className="fade-in-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 text-white/90 text-xs md:text-sm font-medium mb-6">
+            <Shield className="h-3.5 w-3.5 text-[hsl(160_60%_60%)]" />
+            Clínica de referencia en Hellín · Albacete
           </div>
-          <div className="fade-in-up mt-6 flex items-center justify-center gap-1 text-white/80">
-            <div className="flex gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-              ))}
+
+          <h1 className="fade-in-up font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-white max-w-4xl mx-auto tracking-tight">
+            Recupera tu movilidad y{" "}
+            <span className="bg-gradient-to-r from-white to-[hsl(160_60%_75%)] bg-clip-text text-transparent">
+              dile adiós al dolor
+            </span>{" "}
+            en Hellín
+          </h1>
+
+          <p className="fade-in-up mt-6 text-lg md:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed">
+            Tratamientos de fisioterapia avanzada y personalizada para que vuelvas
+            a tu rutina sin molestias. Resultados desde la primera sesión.
+          </p>
+
+          {/* Botones con jerarquía clara */}
+          <div className="fade-in-up mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+            <a
+              href="#reservas"
+              className="
+                w-full sm:w-auto
+                inline-flex items-center justify-center
+                px-8 py-4 rounded-xl
+                bg-white text-[hsl(213_94%_28%)]
+                font-semibold text-base
+                shadow-[0_8px_30px_hsl(0_0%_100%_/_0.2)]
+                hover:bg-white/95 hover:shadow-[0_12px_40px_hsl(0_0%_100%_/_0.3)]
+                hover:-translate-y-0.5
+                transition-all duration-200
+              "
+            >
+              Reservar Cita
+            </a>
+            <Link
+              to="/servicios"
+              className="
+                w-full sm:w-auto
+                inline-flex items-center justify-center
+                px-8 py-4 rounded-xl
+                bg-white/10 backdrop-blur-sm text-white
+                font-semibold text-base
+                border border-white/25
+                hover:bg-white/15 hover:border-white/40
+                transition-all duration-200
+              "
+            >
+              Ver Servicios
+            </Link>
+          </div>
+
+          {/* Social proof */}
+          <div className="fade-in-up mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 text-white/70 text-sm">
+            <div className="flex items-center gap-2">
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <span className="font-semibold text-white/90">5.0 en Google</span>
             </div>
-            <span className="ml-2 text-sm">Más de 1.000 pacientes recuperados en Hellín</span>
+            <span className="hidden sm:inline text-white/30">•</span>
+            <span>Más de 1.000 pacientes recuperados en Hellín</span>
           </div>
         </div>
       </section>
