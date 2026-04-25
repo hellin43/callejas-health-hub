@@ -128,7 +128,7 @@ const Index = () => {
       </section>
 
       {/* Ventajas */}
-      <section className="py-16 md:py-24 bg-slate-50">
+      <section className="py-16 md:py-24 bg-[hsl(var(--section-alt))]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -150,7 +150,7 @@ const Index = () => {
             ].map((item, i) => (
               <Card
                 key={i}
-                className="fade-in-up text-center border-none rounded-2xl shadow-xl bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                className="fade-in-up text-center border-none rounded-2xl bg-card card-elevated"
               >
                 <CardHeader className="items-center pb-2">
                   <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 text-blue-600 mb-2">
@@ -192,7 +192,7 @@ const Index = () => {
             ].map((item, i) => (
               <Card
                 key={i}
-                className={`relative rounded-2xl shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${item.highlighted ? "border-2 border-blue-600" : ""}`}
+                className={`fade-in-up relative rounded-2xl bg-card card-elevated ${item.highlighted ? "border-2 border-blue-600" : ""}`}
               >
                 {item.highlighted && (
                   <Badge className="absolute -top-3 right-4 bg-blue-600 text-white hover:bg-blue-700">
