@@ -34,7 +34,7 @@ const Servicios = () => {
 
   return (
     <div ref={scrollRef}>
-      <section className="py-16 md:py-24 bg-section-alt">
+      <section className="py-16 md:py-24 bg-[hsl(var(--section-alt))]">
         <div className="container mx-auto px-4">
           <h1 className="fade-in-up font-display text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
             Nuestras Especialidades
@@ -51,6 +51,9 @@ const Servicios = () => {
                     src={s.img}
                     alt={s.title}
                     loading="lazy"
+                    decoding="async"
+                    width={600}
+                    height={192}
                     className="w-full h-48 object-cover"
                   />
                   <span className="absolute top-3 left-3 inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-white/90 backdrop-blur-sm text-primary">

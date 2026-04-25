@@ -45,6 +45,9 @@ const Equipo = () => {
                     src={p.img}
                     alt={`Foto de ${p.name}`}
                     loading="lazy"
+                    decoding="async"
+                    width={128}
+                    height={128}
                     className="w-32 h-32 rounded-full object-cover mb-4 ring-4 ring-primary/15 shadow-[0_4px_20px_hsl(213_94%_35%_/_0.2)]"
                   />
                   <CardTitle className="text-xl">{p.name}</CardTitle>
